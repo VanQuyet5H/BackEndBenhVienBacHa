@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Đăng Kí Tài Khoản</title>
+    <link href="/css/test.css" rel="stylesheet" />
+    <link rel="icon" href="/assets/img/icon.png" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" method="post" asp-action="Register">
+                <input type="text" placeholder="username" />
+                <input type="password" placeholder="password" />
+                <input type="password" placeholder="comfirmpassword" />
+                <input type="text" placeholder="Số điện thoại" />
+                <button>Tạo Tài Khoản</button>
+                <p class="message">Already registered?<a href="/Login/Login">Đăng Nhập</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="/js/test.js"></script>
+</body>
+</html>

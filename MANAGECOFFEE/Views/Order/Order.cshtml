@@ -1,0 +1,40 @@
+﻿@* @model Order
+
+<h2>Đặt Hàng</h2> *@
+
+@* <form action="/Order/Store" method="post">
+    <div class="form-group">
+        <label for="CustomerName">Customer Name</label>
+        <input type="text" class="form-control" id="CustomerName" name="CustomerName" />
+    </div>
+
+    <div class="form-group">
+        <label for="Products">Products</label>
+        <select class="form-control" id="Coffee" name="Coffee">
+            @foreach (var Order in Model.Order)
+            {
+                <option value="@Order.Id">@Order.Name</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Place Order</button>
+</form>
+@* function placeOrder() {
+    // Get the order information from the form
+    var order = {
+        CustomerName: $("#CustomerName").val(),
+        Products: $("#Products").val(),
+    };
+
+    // Submit the order to the server
+    $.ajax({
+        url: "/Order/Store",
+        type: "POST",
+        data: JSON.stringify(order),
+        contentType: "application/json",
+    }).done(function () {
+        // Redirect to the order list page
+        window.location.href = "/Order";
+    });
+} *@ 

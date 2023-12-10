@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+@section Scripts{
+    <script>
+        setTimeout(function () {
+            $('#msgAlert').fadeOut('slow');
+        }, 2000);
+    </script>
+    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Đăng nhập hệ thống</title>
+    <link href="/css/test.css" rel="stylesheet" />
+    <link rel="icon" href="/assets/img/icon.png" type="image/x-icon" />
+</head>
+<body>
+<div class="login-page">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group" id="msgAlert">
+                    @Html.Raw(@ViewBag.Alert)
+                </div>
+            </div>
+        </div>
+        <div class="form">
+        <form class="login-form" method="post" asp-action="Login">
+            <input type="text" name="Username" placeholder="username" />
+            <input type="password" name="Password" placeholder="password" />
+            <button>login</button>
+                <p class="message">Chưa có tài khoản? <a href="/Login/Register">Tạo tài khoản</a></p>
+        </form>
+    </div>
+</div>
+    <script src="/js/test.js"></script>
+</body>
+</html>
