@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Camino.Api.Models.ChucDanh
+{
+    public class ChucDanhViewModel : BaseViewModel
+    {
+        public string Ten { get; set; }
+        public string Ma { get; set; }
+        public long NhomChucDanhId { get; set; }
+        public string MoTa { get; set; }
+        public bool? IsDisabled { get; set; }
+        public bool? IsDefault { get; set; }
+
+        public string TenNhomChucDanh { get; set; }
+    }
+}

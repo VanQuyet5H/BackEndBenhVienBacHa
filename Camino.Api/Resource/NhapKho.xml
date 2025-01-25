@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NhapKhos>
+  <NhapKhoDuocPham>
+    <SoQuyetDinh>10</SoQuyetDinh>
+    <PreSoQuyetDinh>210702</PreSoQuyetDinh>
+    <SoHopDong>10</SoHopDong>
+    <PreSoHopDong>210702</PreSoHopDong>
+  </NhapKhoDuocPham>
+  <NhapKhoVatTu>
+    <SoQuyetDinh>2</SoQuyetDinh>
+    <PreSoQuyetDinh>201110</PreSoQuyetDinh>
+    <SoHopDong>2</SoHopDong>
+    <PreSoHopDong>201110</PreSoHopDong>
+  </NhapKhoVatTu>
+</NhapKhos>

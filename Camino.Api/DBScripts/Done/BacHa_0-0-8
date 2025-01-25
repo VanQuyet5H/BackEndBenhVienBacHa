@@ -1,0 +1,385 @@
+CREATE TABLE [dbo].[GiayMienGiamThem](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Ma] [nvarchar](50) NULL,
+	[Ten] [nvarchar](256) NOT NULL,
+	[TenGuid] [nvarchar](256) NOT NULL,
+	[KichThuoc] [bigint] NOT NULL,
+	[DuongDan] [nvarchar](500) NOT NULL,
+	[LoaiTapTin] [int] NOT NULL,
+	[MoTa] [nvarchar](2000) NULL,
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+CREATE TABLE [dbo].[Voucher](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](250) NOT NULL,
+	[LoaiVoucher] [int] NOT NULL,
+	[MoTa] [nvarchar](4000) NULL,
+	[TriGia] [decimal](15, 2) NULL,
+	[IsDisabled] [bit] NULL,
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+CREATE TABLE [dbo].[VoucherChiTietMienGiam](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[VoucherId] [bigint] NOT NULL,
+	[TiLeMienGiam] [int] NOT NULL,
+	[DichVuKhamBenhBenhVienId] [bigint] NULL,
+	[DichVuKyThuatBenhVienId] [bigint] NULL,
+	[DuocPhamBenhVienId] [bigint] NULL,
+	[VatTuBenhVienId] [bigint] NULL,
+	[DichVuGiuongBenhVienId] [bigint] NULL,
+	[GoiDichVuId] [bigint] NULL,
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam]  WITH CHECK ADD  CONSTRAINT [FK_VoucherChiTietMienGiam_DichVuGiuongBenhVien] FOREIGN KEY([DichVuGiuongBenhVienId])
+REFERENCES [dbo].[DichVuGiuongBenhVien] ([Id])
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam] CHECK CONSTRAINT [FK_VoucherChiTietMienGiam_DichVuGiuongBenhVien]
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam]  WITH CHECK ADD  CONSTRAINT [FK_VoucherChiTietMienGiam_DichVuKhamBenhBenhVien] FOREIGN KEY([DichVuKhamBenhBenhVienId])
+REFERENCES [dbo].[DichVuKhamBenhBenhVien] ([Id])
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam] CHECK CONSTRAINT [FK_VoucherChiTietMienGiam_DichVuKhamBenhBenhVien]
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam]  WITH CHECK ADD  CONSTRAINT [FK_VoucherChiTietMienGiam_DichVuKyThuatBenhVien] FOREIGN KEY([DichVuKyThuatBenhVienId])
+REFERENCES [dbo].[DichVuKyThuatBenhVien] ([Id])
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam] CHECK CONSTRAINT [FK_VoucherChiTietMienGiam_DichVuKyThuatBenhVien]
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam]  WITH CHECK ADD  CONSTRAINT [FK_VoucherChiTietMienGiam_DuocPhamBenhVien] FOREIGN KEY([DuocPhamBenhVienId])
+REFERENCES [dbo].[DuocPhamBenhVien] ([Id])
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam] CHECK CONSTRAINT [FK_VoucherChiTietMienGiam_DuocPhamBenhVien]
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam]  WITH CHECK ADD  CONSTRAINT [FK_VoucherChiTietMienGiam_GoiDichVu] FOREIGN KEY([GoiDichVuId])
+REFERENCES [dbo].[GoiDichVu] ([Id])
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam] CHECK CONSTRAINT [FK_VoucherChiTietMienGiam_GoiDichVu]
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam]  WITH CHECK ADD  CONSTRAINT [FK_VoucherChiTietMienGiam_VatTuBenhVien] FOREIGN KEY([VatTuBenhVienId])
+REFERENCES [dbo].[VatTuBenhVien] ([Id])
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam] CHECK CONSTRAINT [FK_VoucherChiTietMienGiam_VatTuBenhVien]
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam]  WITH CHECK ADD  CONSTRAINT [FK_VoucherChiTietMienGiam_Voucher] FOREIGN KEY([VoucherId])
+REFERENCES [dbo].[Voucher] ([Id])
+GO
+
+ALTER TABLE [dbo].[VoucherChiTietMienGiam] CHECK CONSTRAINT [FK_VoucherChiTietMienGiam_Voucher]
+GO
+
+CREATE TABLE [dbo].[TheVoucher](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Ma] [nvarchar](50) NOT NULL,
+	[VoucherId] [bigint] NOT NULL,
+	[TriGia] [decimal](15, 2) NULL,
+	[TuNgay] [datetime] NOT NULL,
+	[DenNgay] [datetime] NOT NULL,
+	[TongGiaTriDaSuDung] [decimal](15, 2) NULL,
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[TheVoucher]  WITH CHECK ADD  CONSTRAINT [FK_TheVoucher_Voucher] FOREIGN KEY([VoucherId])
+REFERENCES [dbo].[Voucher] ([Id])
+GO
+
+ALTER TABLE [dbo].[TheVoucher] CHECK CONSTRAINT [FK_TheVoucher_Voucher]
+GO
+
+CREATE TABLE [dbo].[TheVoucherYeuCauTiepNhan](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[TheVoucherId] [bigint] NOT NULL,
+	[YeuCauTiepNhanId] [bigint] NOT NULL,
+	[BenhNhanId] [bigint] NOT NULL,
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[TheVoucherYeuCauTiepNhan]  WITH CHECK ADD  CONSTRAINT [FK_TheVoucherYeuCauTiepNhan_BenhNhan] FOREIGN KEY([BenhNhanId])
+REFERENCES [dbo].[BenhNhan] ([Id])
+GO
+
+ALTER TABLE [dbo].[TheVoucherYeuCauTiepNhan] CHECK CONSTRAINT [FK_TheVoucherYeuCauTiepNhan_BenhNhan]
+GO
+
+ALTER TABLE [dbo].[TheVoucherYeuCauTiepNhan]  WITH CHECK ADD  CONSTRAINT [FK_TheVoucherYeuCauTiepNhan_TheVoucher] FOREIGN KEY([TheVoucherId])
+REFERENCES [dbo].[TheVoucher] ([Id])
+GO
+
+ALTER TABLE [dbo].[TheVoucherYeuCauTiepNhan] CHECK CONSTRAINT [FK_TheVoucherYeuCauTiepNhan_TheVoucher]
+GO
+
+ALTER TABLE [dbo].[TheVoucherYeuCauTiepNhan]  WITH CHECK ADD  CONSTRAINT [FK_TheVoucherYeuCauTiepNhan_YeuCauTiepNhan] FOREIGN KEY([YeuCauTiepNhanId])
+REFERENCES [dbo].[YeuCauTiepNhan] ([Id])
+GO
+
+ALTER TABLE [dbo].[TheVoucherYeuCauTiepNhan] CHECK CONSTRAINT [FK_TheVoucherYeuCauTiepNhan_YeuCauTiepNhan]
+GO
+
+CREATE TABLE [dbo].[MienGiamChiPhi](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[TaiKhoanBenhNhanThuId] [bigint] NOT NULL,
+	[YeuCauTiepNhanId] [bigint] NOT NULL,
+	[LoaiMienGiam] [int] NOT NULL,
+	[SoTien] [decimal](15, 2) NOT NULL,
+	[TheVoucherId] [bigint] NULL,
+	[YeuCauKhamBenhId] [bigint] NULL,
+	[YeuCauDichVuKyThuatId] [bigint] NULL,
+	[YeuCauDuocPhamBenhVienId] [bigint] NULL,
+	[YeuCauVatTuBenhVienId] [bigint] NULL,
+	[YeuCauDichVuGiuongBenhVienId] [bigint] NULL,
+	[YeuCauGoiDichVuId] [bigint] NULL,
+	[DonThuocThanhToanChiTietId] [bigint] NULL,
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_DonThuocThanhToanChiTiet] FOREIGN KEY([DonThuocThanhToanChiTietId])
+REFERENCES [dbo].[DonThuocThanhToanChiTiet] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_DonThuocThanhToanChiTiet]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_TheVoucher] FOREIGN KEY([TheVoucherId])
+REFERENCES [dbo].[TheVoucher] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_TheVoucher]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_YeuCauDichVuGiuongBenhVien] FOREIGN KEY([YeuCauDichVuGiuongBenhVienId])
+REFERENCES [dbo].[YeuCauDichVuGiuongBenhVien] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_YeuCauDichVuGiuongBenhVien]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_YeuCauDichVuKyThuat] FOREIGN KEY([YeuCauDichVuKyThuatId])
+REFERENCES [dbo].[YeuCauDichVuKyThuat] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_YeuCauDichVuKyThuat]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_YeuCauDuocPhamBenhVien] FOREIGN KEY([YeuCauDuocPhamBenhVienId])
+REFERENCES [dbo].[YeuCauDuocPhamBenhVien] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_YeuCauDuocPhamBenhVien]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_YeuCauGoiDichVu] FOREIGN KEY([YeuCauGoiDichVuId])
+REFERENCES [dbo].[YeuCauGoiDichVu] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_YeuCauGoiDichVu]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_YeuCauKhamBenh] FOREIGN KEY([YeuCauKhamBenhId])
+REFERENCES [dbo].[YeuCauKhamBenh] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_YeuCauKhamBenh]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_YeuCauTiepNhan] FOREIGN KEY([YeuCauTiepNhanId])
+REFERENCES [dbo].[YeuCauTiepNhan] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_YeuCauTiepNhan]
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi]  WITH CHECK ADD  CONSTRAINT [FK_MienGiamChiPhi_YeuCauVatTuBenhVien] FOREIGN KEY([YeuCauVatTuBenhVienId])
+REFERENCES [dbo].[YeuCauVatTuBenhVien] ([Id])
+GO
+
+ALTER TABLE [dbo].[MienGiamChiPhi] CHECK CONSTRAINT [FK_MienGiamChiPhi_YeuCauVatTuBenhVien]
+GO
+ALTER TABLE [CongTyBaoHiemTuNhanCongNo]
+ADD 
+	[YeuCauKhamBenhId] [bigint] NULL,
+	[YeuCauDichVuKyThuatId] [bigint] NULL,
+	[YeuCauDuocPhamBenhVienId] [bigint] NULL,
+	[YeuCauVatTuBenhVienId] [bigint] NULL,
+	[YeuCauDichVuGiuongBenhVienId] [bigint] NULL,
+	[DonThuocThanhToanChiTietId] [bigint] NULL,
+	[YeuCauGoiDichVuId] [bigint] NULL;
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo]  WITH CHECK ADD  CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_DonThuocThanhToanChiTiet] FOREIGN KEY([DonThuocThanhToanChiTietId])
+REFERENCES [dbo].[DonThuocThanhToanChiTiet] ([Id])
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo] CHECK CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_DonThuocThanhToanChiTiet]
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo]  WITH CHECK ADD  CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauDichVuGiuongBenhVien] FOREIGN KEY([YeuCauDichVuGiuongBenhVienId])
+REFERENCES [dbo].[YeuCauDichVuGiuongBenhVien] ([Id])
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo] CHECK CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauDichVuGiuongBenhVien]
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo]  WITH CHECK ADD  CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauDichVuKyThuat] FOREIGN KEY([YeuCauDichVuKyThuatId])
+REFERENCES [dbo].[YeuCauDichVuKyThuat] ([Id])
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo] CHECK CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauDichVuKyThuat]
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo]  WITH CHECK ADD  CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauDuocPhamBenhVien] FOREIGN KEY([YeuCauDuocPhamBenhVienId])
+REFERENCES [dbo].[YeuCauDuocPhamBenhVien] ([Id])
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo] CHECK CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauDuocPhamBenhVien]
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo]  WITH CHECK ADD  CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauGoiDichVu] FOREIGN KEY([YeuCauGoiDichVuId])
+REFERENCES [dbo].[YeuCauGoiDichVu] ([Id])
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo] CHECK CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauGoiDichVu]
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo]  WITH CHECK ADD  CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauKhamBenh] FOREIGN KEY([YeuCauKhamBenhId])
+REFERENCES [dbo].[YeuCauKhamBenh] ([Id])
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo] CHECK CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauKhamBenh]
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo]  WITH CHECK ADD  CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauVatTuBenhVien] FOREIGN KEY([YeuCauVatTuBenhVienId])
+REFERENCES [dbo].[YeuCauVatTuBenhVien] ([Id])
+GO
+ALTER TABLE [dbo].[CongTyBaoHiemTuNhanCongNo] CHECK CONSTRAINT [FK_CongTyBaoHiemTuNhanCongNo_YeuCauVatTuBenhVien]
+GO
+
+ALTER TABLE [DonThuocThanhToanChiTiet]
+ADD 
+	[SoTienBaoHiemTuNhanChiTra] [decimal](15, 2) NULL,
+	[SoTienMienGiam] [decimal](15, 2) NULL;
+GO
+
+ALTER TABLE [dbo].[TaiKhoanBenhNhanChi] DROP CONSTRAINT [FK_TaiKhoanBenhNhanChi_YeuCauKhamBenhDonThuocThanhToan]
+	
+Go
+ALTER TABLE [TaiKhoanBenhNhanChi]
+DROP COLUMN [DonThuocThanhToanId];
+	
+ALTER TABLE [TaiKhoanBenhNhanChi]
+ADD 
+	[DonThuocThanhToanChiTietId] [bigint] NULL;
+GO
+	
+Go
+ALTER TABLE [dbo].[TaiKhoanBenhNhanChi]  WITH CHECK ADD  CONSTRAINT [FK_TaiKhoanBenhNhanChi_DonThuocThanhToanChiTiet] FOREIGN KEY([DonThuocThanhToanChiTietId]) 
+REFERENCES [dbo].[DonThuocThanhToanChiTiet] ([Id])	
+GO
+ALTER TABLE [dbo].[TaiKhoanBenhNhanChi] CHECK CONSTRAINT [FK_TaiKhoanBenhNhanChi_DonThuocThanhToanChiTiet]
+GO
+
+ALTER TABLE [YeuCauDichVuGiuongBenhVien]
+ADD 
+	[SoTienBaoHiemTuNhanChiTra] [decimal](15, 2) NULL,
+	[SoTienMienGiam] [decimal](15, 2) NULL;
+GO
+
+ALTER TABLE [YeuCauDichVuKyThuat]
+ADD 
+	[SoTienBaoHiemTuNhanChiTra] [decimal](15, 2) NULL,
+	[SoTienMienGiam] [decimal](15, 2) NULL;
+GO
+
+ALTER TABLE [YeuCauDuocPhamBenhVien]
+ADD 
+	[SoTienBaoHiemTuNhanChiTra] [decimal](15, 2) NULL,
+	[SoTienMienGiam] [decimal](15, 2) NULL;
+GO
+
+ALTER TABLE [YeuCauGoiDichVu]
+ADD 
+	[SoTienBaoHiemTuNhanChiTra] [decimal](15, 2) NULL,
+	[SoTienMienGiam] [decimal](15, 2) NULL;
+GO
+
+ALTER TABLE [YeuCauKhamBenh]
+ADD 
+	[SoTienBaoHiemTuNhanChiTra] [decimal](15, 2) NULL,
+	[SoTienMienGiam] [decimal](15, 2) NULL;
+GO
+
+ALTER TABLE [YeuCauVatTuBenhVien]
+ADD 
+	[SoTienBaoHiemTuNhanChiTra] [decimal](15, 2) NULL,
+	[SoTienMienGiam] [decimal](15, 2) NULL;
+GO
+
+ALTER TABLE [YeuCauTiepNhan]
+ADD 
+	[CoMienGiamThem] [bit] NULL,
+	[LoaiMienGiamThem] [int] NULL,
+	[SoTienMienGiamThem] [decimal](15, 2) NULL,
+	[TiLeMienGiamThem] [int] NULL,
+	[LyDoMienGiamThem] [nvarchar](2000) NULL,
+	[GiayMienGiamThemId] [bigint] NULL;
+GO
+	
+ALTER TABLE [dbo].[YeuCauTiepNhan]  WITH CHECK ADD  CONSTRAINT [FK_YeuCauTiepNhan_GiayMienGiamThem] FOREIGN KEY([GiayMienGiamThemId])
+REFERENCES [dbo].[GiayMienGiamThem] ([Id])
+GO
+ALTER TABLE [dbo].[YeuCauTiepNhan] CHECK CONSTRAINT [FK_YeuCauTiepNhan_GiayMienGiamThem]
+GO
+Update CauHinh
+Set [Value] = '0.0.8' where [Name] = 'CauHinhHeThong.DatabaseVesion'

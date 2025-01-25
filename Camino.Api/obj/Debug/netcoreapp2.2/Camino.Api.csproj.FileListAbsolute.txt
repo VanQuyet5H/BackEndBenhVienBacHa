@@ -1,0 +1,7 @@
+C:\Máy tính\WebApi\WebApi\Camino.Api\obj\Debug\netcoreapp2.2\Camino.Api.csproj.AssemblyReference.cache
+C:\Máy tính\WebApi\WebApi\Camino.Api\obj\Debug\netcoreapp2.2\Camino.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Máy tính\WebApi\WebApi\Camino.Api\obj\Debug\netcoreapp2.2\Camino.Api.AssemblyInfoInputs.cache
+C:\Máy tính\WebApi\WebApi\Camino.Api\obj\Debug\netcoreapp2.2\Camino.Api.AssemblyInfo.cs
+C:\Máy tính\WebApi\WebApi\Camino.Api\obj\Debug\netcoreapp2.2\Camino.Api.csproj.CoreCompileInputs.cache
+C:\Máy tính\WebApi\WebApi\Camino.Api\obj\Debug\netcoreapp2.2\Camino.Api.RazorAssemblyInfo.cache
+C:\Máy tính\WebApi\WebApi\Camino.Api\obj\Debug\netcoreapp2.2\Camino.Api.RazorAssemblyInfo.cs

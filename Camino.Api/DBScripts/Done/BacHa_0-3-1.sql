@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[PhuongPhapVoCam](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Ma] [nvarchar](50) NOT NULL,
+	[Ten] [nvarchar](250) NOT NULL,
+	[MoTa] [varchar](2000) NULL,
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+ CONSTRAINT [PK__PhuongPh__3214EC071D7E9719] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 1, 97, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 2, 97, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 3, 97, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 4, 97, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 5, 97, 1, 1, getdate(), getdate());
+INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 1, 98, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 2, 98, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 3, 98, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 4, 98, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 5, 98, 1, 1, getdate(), getdate());
+INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 1, 99, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 2, 99, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 3, 99, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 4, 99, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 5, 99, 1, 1, getdate(), getdate());
+INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 1, 100, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 2, 100, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 3, 100, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 4, 100, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 5, 100, 1, 1, getdate(), getdate());
+INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 1, 101, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 2, 101, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 3, 101, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 4, 101, 1, 1, getdate(), getdate());	INSERT [dbo].[RoleFunction] ( [RoleId], [SecurityOperation], [DocumentType], [CreatedById], [LastUserId], [LastTime], [CreatedOn]) VALUES ( 1, 5, 101, 1, 1, getdate(), getdate());
+
+
+Update CauHinh
+Set [Value] = '0.3.1' where [Name] = 'CauHinhHeThong.DatabaseVesion'

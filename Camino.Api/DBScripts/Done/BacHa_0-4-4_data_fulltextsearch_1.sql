@@ -1,0 +1,1 @@
+﻿ALTER FULLTEXT INDEX ON DuocPham ADD (NhaSanXuat Language 1066)

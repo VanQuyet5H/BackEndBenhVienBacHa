@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BenhNhans\appsettings.Development.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.103.63" />
+    <PackageReference Include="AWSSDK.KeyManagementService" Version="3.3.101.84" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.106.5" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.87" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.12.3" />
+    <PackageReference Include="EPPlus" Version="4.5.3.2" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
+    <PackageReference Include="FirebaseAdmin" Version="1.9.1" />
+    <PackageReference Include="FluentValidation" Version="8.5.1" />
+    <PackageReference Include="itext7.pdfhtml" Version="2.1.5" />
+    <PackageReference Include="iTextSharp.NetCore" Version="5.5.13.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" />
+    <PackageReference Include="Microsoft.AspNetCore.All" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.19" />
+    <PackageReference Include="Wkhtmltopdf.NetCore" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Camino.Core\Camino.Core.csproj" />
+    <ProjectReference Include="..\Camino.Data\Camino.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BaoCaoKhamDoanHopDong\" />
+    <Folder Include="DonViMaus\" />
+    <Folder Include="LoaiGoiDichVus\" />
+    <Folder Include="NgayLeTet\" />
+    <Folder Include="NhapKhoVatTuNhomKSNK\" />
+    <Folder Include="NoiTruChiDinhPhaThuocTiems\" />
+    <Folder Include="NoiTruChiDinhPhaThuocTruyens\" />
+    <Folder Include="TuDienDichVuKyThuat\" />
+    <Folder Include="XuatKhoKhacKSNKs\" />
+    <Folder Include="XuatKhoKSNKs\" />
+    <Folder Include="YeuCauHoanTra\KSNK\" />
+    <Folder Include="YeuCauLinhKSNK\" />
+    <Folder Include="YeuCauMuaDuTruKiemSoatNhiemKhuan\" />
+  </ItemGroup>
+
+</Project>

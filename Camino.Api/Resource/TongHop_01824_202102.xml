@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GIAMDINHHS xmlnsxsd="http://www.w3.org/2001/XMLSchema" xmlnsxsi="http://www.w3.org/2001/XMLSchema-instance">
+  <THONGTINDONVI>
+    <MACSKCB>01824</MACSKCB>
+  </THONGTINDONVI>
+  <THONGTINHOSO>
+    <NGAYLAP>20210205</NGAYLAP>
+    <SOLUONGHOSO>1</SOLUONGHOSO>
+    <DANHSACHHOSO>
+      <HOSO>
+        <FILEHOSO>
+          <LOAIHOSO>XML1</LOAIHOSO>
+          <NOIDUNGFILE>
+            <TONG_HOP>
+              <MA_LK>2010070018</MA_LK>
+              <STT>1</STT>
+              <MA_BN>20000860</MA_BN>
+              <HO_TEN>NGUYỄN THỊ PHƯƠNG ANH</HO_TEN>
+              <NGAY_SINH>20051105</NGAY_SINH>
+              <GIOI_TINH>2</GIOI_TINH>
+              <DIA_CHI>Số 21 Tư Đình - P Long Biên - TP Hà Nôi, Phường Long Biên, Quận Long Biên, Thành phố Hà Nội</DIA_CHI>
+              <MA_THE>HS4010130163944</MA_THE>
+              <MA_DKBD>01025</MA_DKBD>
+              <GT_THE_TU>20200101</GT_THE_TU>
+              <GT_THE_DEN>20201231</GT_THE_DEN>
+              <MIEN_CUNG_CT></MIEN_CUNG_CT>
+              <TEN_BENH>Viêm họng</TEN_BENH>
+              <MA_BENH>J02</MA_BENH>
+              <MA_BENHKHAC>A91</MA_BENHKHAC>
+              <MA_LYDO_VVIEN>1</MA_LYDO_VVIEN>
+              <MA_NOI_CHUYEN></MA_NOI_CHUYEN>
+              <MA_TAI_NAN>0</MA_TAI_NAN>
+              <NGAY_VAO>20200100701018</NGAY_VAO>
+              <NGAY_RA>2020010141439</NGAY_RA>
+              <SO_NGAY_DTRI>8</SO_NGAY_DTRI>
+              <KET_QUA_DTRI>1</KET_QUA_DTRI>
+              <TINH_TRANG_RV>1</TINH_TRANG_RV>
+              <NGAY_TTOAN>202001014</NGAY_TTOAN>
+              <T_THUOC>0</T_THUOC>
+              <T_VTYT>0</T_VTYT>
+              <T_TONGCHI>0</T_TONGCHI>
+              <T_BNTT>0</T_BNTT>
+              <T_BNCCT>0</T_BNCCT>
+              <T_BHTT>0</T_BHTT>
+              <T_NGUONKHAC>0</T_NGUONKHAC>
+              <T_NGOAIDS>0</T_NGOAIDS>
+              <NAM_QT>2021</NAM_QT>
+              <THANG_QT>2</THANG_QT>
+              <MA_LOAI_KCB>1</MA_LOAI_KCB>
+              <MA_KHOA>KNN</MA_KHOA>
+              <MA_CSKCB>01249</MA_CSKCB>
+              <MA_KHUVUC></MA_KHUVUC>
+              <MA_PTTT_QT></MA_PTTT_QT>
+              <CAN_NANG>48</CAN_NANG>
+            </TONG_HOP>
+          </NOIDUNGFILE>
+        </FILEHOSO>
+      </HOSO>
+    </DANHSACHHOSO>
+  </THONGTINHOSO>
+  <CHUKYDONVI />
+</GIAMDINHHS>

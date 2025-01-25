@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ChucDanhs>
+  <ChucDanh>
+    <STT>6</STT>
+    <PreTenChucDanh>Bác sĩ</PreTenChucDanh>
+  </ChucDanh>
+  <ChucDanh>
+    <STT>2</STT>
+    <PreTenChucDanh>Giáo viên</PreTenChucDanh>
+  </ChucDanh>
+  <ChucDanh>
+    <STT>3</STT>
+    <PreTenChucDanh>Người mẫu</PreTenChucDanh>
+  </ChucDanh>
+  <ChucDanh>
+    <STT>4</STT>
+    <PreTenChucDanh>Phó giáo sư</PreTenChucDanh>
+  </ChucDanh>
+  <ChucDanh>
+    <STT>5</STT>
+    <PreTenChucDanh>Giám đốc</PreTenChucDanh>
+  </ChucDanh>
+</ChucDanhs>

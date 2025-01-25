@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Domain\ValueObject\NoiTruBenhAn\ThongTinBenhAnKhoaNhi.cs" />
+    <Compile Remove="Domain\ValueObject\NoiTruBenhAn\ThongTinBenhAnNgoaiKhoa.cs" />
+    <Compile Remove="Domain\ValueObject\NoiTruBenhAn\ThongTinBenhAnNoiKhoaNhi.cs" />
+    <Compile Remove="Domain\ValueObject\NoiTruBenhAn\ThongTinBenhAnPhuKhoa.cs" />
+    <Compile Remove="Domain\ValueObject\NoiTruBenhAn\ThongTinBenhAnSanKhoaMoThuong.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Camino.Api\Controllers\BaoCaoController.BaoCaoKeHoachTongHop.cs" Link="BaoCaoController.BaoCaoKeHoachTongHop.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BarcodeLib" Version="2.2.3" />
+    <PackageReference Include="DotLiquid" Version="2.0.314" />
+    <PackageReference Include="Microsoft.AspNetCore.All" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
+    <PackageReference Include="NLog" Version="4.6.3" />
+    <PackageReference Include="System.IO.FileSystem.AccessControl" Version="4.6.0" />
+    <PackageReference Include="ZXing.Net" Version="0.16.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Caching\" />
+    <Folder Include="Domain\ValueObject\DichVuChiDinhNoiTruNgoaiTru\" />
+    <Folder Include="Domain\ValueObject\KetQuaCLS\" />
+    <Folder Include="Domain\ValueObject\NgayLeTet\" />
+  </ItemGroup>
+
+</Project>

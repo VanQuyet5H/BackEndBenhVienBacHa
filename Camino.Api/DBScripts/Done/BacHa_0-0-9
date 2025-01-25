@@ -1,0 +1,156 @@
+ALTER TABLE [YeuCauGoiDichVu]
+ADD 
+	[TiLeChietKhau] [float] NULL;
+GO
+CREATE TABLE [dbo].[DichVuKhamBenhBenhVienNoiThucHien](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[DichVuKhamBenhBenhVienId] [bigint] NOT NULL,
+	[KhoaPhongId] [bigint] NULL,
+	[PhongBenhVienId] [bigint] NULL,	
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE dbo.DichVuKhamBenhBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuKhamBenhBenhVienNoiThucHien_DichVuKhamBenhBenhVien FOREIGN KEY
+	(
+	DichVuKhamBenhBenhVienId
+	) REFERENCES dbo.DichVuKhamBenhBenhVien
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+ALTER TABLE dbo.DichVuKhamBenhBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuKhamBenhBenhVienNoiThucHien_KhoaPhong FOREIGN KEY
+	(
+	KhoaPhongId
+	) REFERENCES dbo.KhoaPhong
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+ALTER TABLE dbo.DichVuKhamBenhBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuKhamBenhBenhVienNoiThucHien_PhongBenhVien FOREIGN KEY
+	(
+	PhongBenhVienId
+	) REFERENCES dbo.PhongBenhVien
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 	
+
+GO
+CREATE TABLE [dbo].[DichVuKyThuatBenhVienNoiThucHien](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[DichVuKyThuatBenhVienId] [bigint] NOT NULL,
+	[KhoaPhongId] [bigint] NULL,
+	[PhongBenhVienId] [bigint] NULL,	
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE dbo.DichVuKyThuatBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuKyThuatBenhVienNoiThucHien_DichVuKyThuatBenhVien FOREIGN KEY
+	(
+	DichVuKyThuatBenhVienId
+	) REFERENCES dbo.DichVuKyThuatBenhVien
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+ALTER TABLE dbo.DichVuKyThuatBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuKyThuatBenhVienNoiThucHien_KhoaPhong FOREIGN KEY
+	(
+	KhoaPhongId
+	) REFERENCES dbo.KhoaPhong
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+ALTER TABLE dbo.DichVuKyThuatBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuKyThuatBenhVienNoiThucHien_PhongBenhVien FOREIGN KEY
+	(
+	PhongBenhVienId
+	) REFERENCES dbo.PhongBenhVien
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+
+
+CREATE TABLE [dbo].[DichVuGiuongBenhVienNoiThucHien](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[DichVuGiuongBenhVienId] [bigint] NOT NULL,
+	[KhoaPhongId] [bigint] NULL,
+	[PhongBenhVienId] [bigint] NULL,	
+	[CreatedById] [bigint] NOT NULL,
+	[LastUserId] [bigint] NOT NULL,
+	[LastTime] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[LastModified] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE dbo.DichVuGiuongBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuGiuongBenhVienNoiThucHien_DichVuGiuongBenhVien FOREIGN KEY
+	(
+	DichVuGiuongBenhVienId
+	) REFERENCES dbo.DichVuGiuongBenhVien
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+ALTER TABLE dbo.DichVuGiuongBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuGiuongBenhVienNoiThucHien_KhoaPhong FOREIGN KEY
+	(
+	KhoaPhongId
+	) REFERENCES dbo.KhoaPhong
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+ALTER TABLE dbo.DichVuGiuongBenhVienNoiThucHien ADD CONSTRAINT
+	FK_DichVuGiuongBenhVienNoiThucHien_PhongBenhVien FOREIGN KEY
+	(
+	PhongBenhVienId
+	) REFERENCES dbo.PhongBenhVien
+	(
+	Id
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  NO ACTION 
+	
+GO
+
+Update CauHinh
+Set [Value] = '0.0.9' where [Name] = 'CauHinhHeThong.DatabaseVesion'

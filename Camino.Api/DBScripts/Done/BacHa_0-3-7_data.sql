@@ -1,0 +1,1 @@
+﻿INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(2, 6, 90, 1, 1, GETDATE(), GETDATE());

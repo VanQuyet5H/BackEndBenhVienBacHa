@@ -1,0 +1,10 @@
+﻿INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 1, 65, 1, 1, GETDATE(), GETDATE());	
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 2, 65, 1, 1, GETDATE(), GETDATE());	
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 3, 65, 1, 1, GETDATE(), GETDATE());	
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 4, 65, 1, 1, GETDATE(), GETDATE());	
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 5, 65, 1, 1, GETDATE(), GETDATE());
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 1, 66, 1, 1, GETDATE(), GETDATE());	
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 2, 66, 1, 1, GETDATE(), GETDATE());	
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 3, 66, 1, 1, GETDATE(), GETDATE());	
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 4, 66, 1, 1, GETDATE(), GETDATE());	
+INSERT INTO RoleFunction(RoleId, SecurityOperation, DocumentType, CreatedById, LastUserId, LastTime, CreatedOn) VALUES(7, 5, 66, 1, 1, GETDATE(), GETDATE());
